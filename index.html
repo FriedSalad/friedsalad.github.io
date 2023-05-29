@@ -1,6 +1,26 @@
+<!DOCTYPE html>
 <html>
-	<centre>
-<h1>Is den Tilt open ?</h1>
-<p>waarschijnlijk wel</p>
-	</centre>
+<head>
+  <title>Is de Tilt open ?</title>
+  <script>
+    function displayMessage() {
+      var currentDate = new Date();
+      var currentDay = currentDate.getDay(); // 0 (Sunday) to 6 (Saturday)
+      var currentHour = currentDate.getHours();
+
+      var displayText = "Nee";
+
+      if (currentDay !== 3 && currentHour >= 10 && currentHour < 12) {
+        displayText = "Ja";
+      }
+
+      document.getElementById("message").innerHTML = displayText;
+    }
+  </script>
+</head>
+<body onload="displayMessage()">
+  <h1>Is den Tilt open ?</h1>
+  <p id="message"></p>
+</body>
 </html>
+
